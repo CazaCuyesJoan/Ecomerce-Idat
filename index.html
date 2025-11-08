@@ -8,7 +8,7 @@
       font-family: "Segoe UI", Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #fff8f0;
+      background: linear-gradient(to bottom right, #fff8f0, #ffe6cc);
       color: #333;
     }
 
@@ -16,41 +16,76 @@
       background: #d62828;
       padding: 15px;
       text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 20px;
       font-weight: bold;
-      transition: color 0.3s ease;
+      font-size: 1.1em;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
     nav a:hover {
       color: #fcbf49;
+      transform: scale(1.1);
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #f77f00, #fcbf49);
+      color: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
     }
 
     h1 {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 2.5em;
-      color: #d62828;
+      margin-top: 10px;
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.4), 0 0 10px #fff8f0;
+      animation: brillar 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes brillar {
+      from { text-shadow: 3px 3px 6px rgba(0,0,0,0.4), 0 0 10px #fff8f0; }
+      to { text-shadow: 3px 3px 10px rgba(0,0,0,0.6), 0 0 25px #fff; }
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #fffdf5;
+      max-width: 700px;
+      margin: 10px auto;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    section {
+      background: #fff;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px 35px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: scale(1.02);
     }
 
     h2 {
-      margin-top: 40px;
+      margin-top: 0;
       color: #f77f00;
-      border-bottom: 2px solid #fcbf49;
+      border-bottom: 3px solid #fcbf49;
       display: inline-block;
       padding-bottom: 5px;
-    }
-
-    p, ul {
-      font-size: 1.1em;
-      max-width: 700px;
-      margin: 10px auto;
-      line-height: 1.6;
     }
 
     ul {
@@ -58,13 +93,46 @@
       padding-left: 40px;
     }
 
-    section {
-      background: #fff;
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 20px 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .boton {
+      display: inline-block;
+      background: #f77f00;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .boton:hover {
+      background: #d62828;
+      transform: scale(1.05);
+    }
+
+    .testimonios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .testimonio {
+      background: #fff8f0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .testimonio h4 {
+      margin: 10px 0 5px;
+      color: #d62828;
+    }
+
+    .testimonio p {
+      font-size: 0.95em;
+      color: #555;
     }
 
     footer {
@@ -72,43 +140,89 @@
       color: #fff;
       text-align: center;
       padding: 15px;
-      margin-top: 40px;
+      margin-top: 50px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a>Menú</a>
-    <a>Promociones</a>
-    <a>Contacto</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#menu">Menú</a>
+    <a href="#promos">Promociones</a>
+    <a href="#opiniones">Reseñas</a>
+    <a href="#contacto">Contacto</a>
   </nav>
 
-  <h1>🍗 Los Pollos Hermanos 🔥</h1>
-  <p style="text-align:center;">El mejor pollo a la brasa de la ciudad de todo Lima.</p>
+  <header>
+    <h1>🍗 Los Pollos Hermanos 🔥</h1>
+    <p>El mejor pollo a la brasa de todo Lima. Tradición, sabor y calidad desde 1989.</p>
+  </header>
 
-  <section>
-    <h2 id="menu">Menú</h2>
+  <section id="nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>
+      En <strong>Los Pollos Hermanos</strong> llevamos más de 30 años cocinando con pasión. Nuestro secreto está en el marinado especial y el fuego lento, que dan como resultado un sabor inconfundible. 
+      Somos una empresa familiar comprometida con la calidad, la higiene y la atención personalizada.
+    </p>
+    <p>
+      Nuestro objetivo es brindar a cada cliente una experiencia deliciosa y memorable, con un ambiente acogedor y precios justos. 
+      ¡Ven a disfrutar el sabor del verdadero pollo peruano!
+    </p>
+  </section>
+
+  <section id="menu">
+    <h2>Menú</h2>
     <ul>
       <li>Pollo entero - S/55.00</li>
       <li>Medio pollo - S/32.00</li>
       <li>Cuarto de pollo - S/18.00</li>
       <li>Combo familiar (1 pollo + papas + ensalada + gaseosa) - S/75.00</li>
+      <li>Broaster con papas y ensalada - S/22.00</li>
+      <li>Pollo parrillero al carbón - S/45.00</li>
     </ul>
   </section>
 
-  <section>
-    <h2 id="promos">Promociones</h2>
-    <p>🔥 2x1 en cuartos de pollo (lunes y martes).</p>
-    <p>🍗 Combo familiar especial por S/75.00.</p>
+  <section id="promos">
+    <h2>Promociones</h2>
+    <p>🔥 <strong>2x1 en cuartos de pollo</strong> los lunes y martes.</p>
+    <p>🎉 <strong>Descuento de 15%</strong> por compras en línea mayores a S/60.</p>
+    <p>🍗 <strong>Combo familiar especial</strong> con bebida y postre por solo S/78.00.</p>
+    <a href="#contacto" class="boton">Haz tu pedido ahora</a>
   </section>
 
-  <section>
-    <h2 id="contacto">Contacto</h2>
-    <p>📍 Dirección: Av. Don Pollo 67</p>
-    <p>📞 Teléfono: 999-666-888</p>
-    <p>🕒 Horario: 11:00 - 23:00</p>
+  <section id="opiniones">
+    <h2>Reseñas y Comentarios</h2>
+    <p>Estos son algunos comentarios generales de nuestros clientes, recopilados a lo largo de los años. Reflejan la calidad, el sabor y la atención que brindamos en cada visita.</p>
+    <div class="testimonios">
+      <div class="testimonio">
+        <h4>Excelente sabor</h4>
+        <p>Los clientes destacan el sabor único del pollo y la frescura de los ingredientes utilizados en cada plato.</p>
+      </div>
+      <div class="testimonio">
+        <h4>Buena atención</h4>
+        <p>El servicio es rápido, amable y siempre con una sonrisa. La atención al cliente es una de nuestras fortalezas.</p>
+      </div>
+      <div class="testimonio">
+        <h4>Ambiente familiar</h4>
+        <p>Ideal para venir en familia o con amigos. Los espacios son cómodos y el ambiente agradable.</p>
+      </div>
+    </div>
   </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>📍 <strong>Dirección:</strong> Av. Don Pollo 67, Lima</p>
+    <p>📞 <strong>Teléfono:</strong> 999-666-888</p>
+    <p>📧 <strong>Email:</strong> contacto@polloshermanos.pe</p>
+    <p>🕒 <strong>Horario:</strong> Lunes a Domingo - 11:00 a 23:00</p>
+  </section>
+
+  <footer>
+    © 2025 Los Pollos Hermanos - Todos los derechos reservados 🍗
+  </footer>
 
 </body>
 </html>
